@@ -15,8 +15,18 @@ public class StringsAndThings {
      *           countYZ("day fyyyz"); // Should return 2
      */
     public Integer countYZ(String input){
-        return null;
-    }
+
+        String lastLetter = "";
+        Integer result = 0;
+        for(String s : input.split(" ")){
+            lastLetter += s.charAt(s.length() - 1);
+        }
+        if (lastLetter.equals("y") || lastLetter.equals("z")) {
+            result += Integer.valueOf(1);
+            System.out.println(result);
+        }
+        return result;
+        }
 
     /**
      * Given two strings, base and remove, return a version of the base string where all instances of the remove string have
