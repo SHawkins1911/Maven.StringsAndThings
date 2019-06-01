@@ -66,16 +66,15 @@ public class StringsAndThings {
        int is = 0;
        int not = 0;
 
-       for(int i = 0; i <= input.length()-3; i++){
-           if(input.substring(i, i+2).equals("is")){
+       for(int i = 0; i < input.length()-2; i++){
+           if(input.substring(i, i+2).equals("is"))
                is++;
-           }else if(input.substring(i, i+3).equals("not")){
+           if(i + 3 <= input.length() && input.substring(i, i+3).equals("not"))
                not++;
            }
-       }
-            if(input.length() >= 2 && input.substring(input.length()-2).equals("is"))
-                is++;
 
+            if(input.substring(input.length() -1).equals("is"))
+                is++;
         return is == not;
     }
 
